@@ -8,4 +8,7 @@ This is a Work Day Scheduler that allows the ability to save events during a typ
 
 The following contents include: the programmer's personal GitHub repository, which provide the files that were created for this application, this ReadMe, HTML, CSS, and JavaScript. Comments were provided in the code to explain what certain groups of code are doing. This helps the reader better understand what the programmer was thinking with each line of code. 
 
+![Application Screenshot](/screenshot.png)
+Format: ![Work Day Scheduler](https://raw.githubusercontent.com/Edibozu/work-day-scheduler/master/screenshot.png)
+
 
