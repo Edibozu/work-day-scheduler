@@ -6,6 +6,8 @@ $(document).ready(function() {
 
 var containerEl = $(".container");
 var currentDayEl = $("#currentDay");
+var currentHourEl = moment().format("HH");
+// console.log(currentHourEl);
 let m = moment();
 
 var todaysDate = (moment().format('MMMM Do YYYY, h:mm a'));
@@ -20,8 +22,8 @@ for (i = 0; i < workHours.length; i++) {
     // dynamically creating a new row for the hours to display
     var rowEl = $("<div class='row'>");
 
-    var hoursEl = $("<div class='col-sm-1 hour'>").text(workHours[i]);
-
+    var hoursEl = $("<div class='col-sm-1 hour'>").text(workHours[i] + ":00");
+    
     rowEl.append(hoursEl);
 
     containerEl.append(rowEl);
@@ -32,6 +34,16 @@ for (i = 0; i < workHours.length; i++) {
     rowEl.append(textAreaEl);
     containerEl.append(rowEl);
 
+    // applying conditions to the text area for it to display the correct colors depending on the hour
+    if (textAreaEl.attr("data-hour") == currentHourEl) {
+        textAreaEl.addClass("present");
+      } else if (textAreaEl.attr("data-hour") < currentHourEl) {
+        textAreaEl.addClass("past");
+      } else {
+        textAreaEl.addClass("future");
+      }
+
+      // dynamically creating the save buttons for each text-block
 
 
 
